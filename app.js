@@ -1,4 +1,3 @@
-const replyEl = document.getElementById('reply')
 
 const randomNum = getRandomNumber()
 
@@ -20,9 +19,7 @@ function onSpeak(e){
 
 //write user speech
     function writeMessage(reply){
-        replyEl.innerHTML=
-        <div>You said:</div>
-        <span class='box'>${reply}</span>
+        document.getElementsByClassName('box').innerHTML(`You said: ${reply}`)
         ;
     }
 
@@ -30,14 +27,13 @@ function onSpeak(e){
     function checkNumber(reply){
         const num =+reply
         if(Number.isNaN(num)){
-        replyEl.innerHTML = <div>It's not a number</div> 
+        document.getElementsByClassName("box").innerHTML(`It's not a number`)
             return;
     }
 
     //check if the number is in range of 1 - 100
     if(num > 100 || num < 1){
-        replyEl.innerHTML= 
-        <div>Number must be between 1 and 100</div>;
+        document.getElementsByClassName('box').innerHTML(`Number must be between 1 and 100`)
     }    
 
 }
