@@ -31,10 +31,18 @@ function onSpeak(e){
             return;
     }
 
-    //check if the number is in range of 1 - 100
+    //Check if the number is in range of 1 - 100
     if(num > 100 || num < 1){
-        document.getElementsByClassName('box').innerHTML(`Number must be between 1 and 100`)
-    }    
+        document.getElementsByClassName('box').innerHTML(`Number must be between 1 and 100`) 
+    }   
+    
+    //Check number
+     if(num === randomNum){
+       document.body.innerHTML = `
+        <h2>Congrats! You have guessed the number</h2><br><br>
+        <button> class="play-again" id="play-again>Play Again</button>
+       `
+     }
 
 }
 
