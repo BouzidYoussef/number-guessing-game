@@ -12,7 +12,7 @@ recognition.start();
 
 //Capture user speak
 function onSpeak(e){
-    const reply = e.results[0] [0].transcript;
+    const reply = e.results[0][0].transcript;
     // writeMessage(reply);
     // checkNumber(reply);
 }
@@ -41,7 +41,7 @@ function onSpeak(e){
        document.body.innerHTML = `
         <h2>Congrats! You have guessed the number</h2><br><br>
         <button> class="play-again" id="play-again>Play Again</button>
-       `
+       `;
      }
 
 }
@@ -54,3 +54,11 @@ function getRandomNumber(){
 }
 //Speak result
 recognition.addEventListener('result', onSpeak())
+
+//End SR service 
+
+recognition.body.addEventListener('click', e =>{
+    if(e.target.id == 'play-again'){
+        window.location.reload();
+    }
+})
